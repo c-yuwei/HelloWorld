@@ -5,10 +5,10 @@
 [![DOI](https://img.shields.io/badge/DOI-10.1371%2Fjournal.pone.0178798-blue)](https://doi.org/10.1371/journal.pone.0178798)
 
 
-# BRAPH 2.0 Hello, World!
-The **BRAPH 2.0 Hello, World!** is a simple BRAPH 2.0 distribution that showcases the BRAPH 2 Genesis System to create a **standalone**, **unit-tested**, and **GUI-ready** software distribution. 
+# BRAPH 2 Hello, World!
+The **BRAPH 2 Hello, World!** is a simple BRAPH 2 distribution that showcases the BRAPH 2 Genesis System to create a **standalone**, **unit-tested**, and **GUI-ready** software distribution. 
 
-This distribution utilizes the minimal functionalities of the **standard BRAPH 2.0 software** to demonstrate a pipeline consisting of (1) Defining the first string (e.g., _Hello_), (2) Defining the second string (e.g., _World_)) (3) Combining both strings (e.g., _Hello World_). More information about how to create your own distribution can be found in the main [BRAPH 2.0](https://github.com/braph-software/BRAPH-2/tree/develop) repository. The full tutorials are available [here](https://github.com/braph-software/BRAPH-2/tree/develop/tutorials).
+This distribution utilizes the minimal functionalities of the **standard BRAPH 2 software** to demonstrate a pipeline consisting of (1) Defining the first string (e.g., _Hello_), (2) Defining the second string (e.g., _World_)) (3) Combining both strings (e.g., _Hello World_). More information about how to create your own distribution can be found in the main [BRAPH 2.0](https://github.com/braph-software/BRAPH-2/tree/develop) repository. The full tutorials are available [here](https://github.com/braph-software/BRAPH-2/tree/develop/tutorials).
 
 ## Software compilation
 
