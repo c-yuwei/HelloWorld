@@ -8,7 +8,7 @@
 # BRAPH 2 Hello, World!
 The **BRAPH 2 Hello, World!** is a minimal BRAPH 2 distribution example designed to showcase the capability of the _Genesis_ System in creating **standalone**, **unit-tested**, and **GUI-ready** BRAPH 2 distributions. 
 
-TThis distribution demonstrates the core functionalities of standard BRAPH 2 software through a simple pipeline: (1) defining a first string (e.g., Hello), (2) defining a second string (e.g., World), and (3) combining both strings (e.g., Hello World). More information about how to create your own distribution can be found in the main [BRAPH 2.0](https://github.com/braph-software/BRAPH-2/tree/develop) repository. The full tutorials are available [here](https://github.com/braph-software/BRAPH-2/tree/develop/tutorials).
+This distribution demonstrates the core functionalities of standard BRAPH 2 software through a simple pipeline: (1) defining a first string (e.g., Hello), (2) defining a second string (e.g., World), and (3) combining both strings (e.g., Hello World). More information about how to create your own distribution can be found in the main [BRAPH 2.0](https://github.com/braph-software/BRAPH-2/tree/develop) repository. The full tutorials are available [here](https://github.com/braph-software/BRAPH-2/tree/develop/tutorials).
 
 ## Software compilation
 
