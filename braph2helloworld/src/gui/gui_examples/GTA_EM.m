@@ -111,7 +111,7 @@ classdef GTA_EM < ConcreteElement
 	%
 	% See also PanelPropEmpty.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		EM_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_EM < ConcreteElement
 			prop = GTA_EM.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_EM.EM_C % __GTA_EM.EM_C__
+				case 9 % GTA_EM.EM_C
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_M % __GTA_EM.EM_M__
+				case 10 % GTA_EM.EM_M
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_P % __GTA_EM.EM_P__
+				case 11 % GTA_EM.EM_P
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_D % __GTA_EM.EM_D__
+				case 12 % GTA_EM.EM_D
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_R % __GTA_EM.EM_R__
+				case 13 % GTA_EM.EM_R
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_Q % __GTA_EM.EM_Q__
+				case 14 % GTA_EM.EM_Q
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_E % __GTA_EM.EM_E__
+				case 15 % GTA_EM.EM_E
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_F % __GTA_EM.EM_F__
+				case 16 % GTA_EM.EM_F
 					prop_settings = Format.getFormatSettings(1);
-				case GTA_EM.EM_G % __GTA_EM.EM_G__
+				case 17 % GTA_EM.EM_G
 					prop_settings = Format.getFormatSettings(1);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_EM < ConcreteElement
 			prop = GTA_EM.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_EM.EM_C % __GTA_EM.EM_C__
+				case 9 % GTA_EM.EM_C
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_M % __GTA_EM.EM_M__
+				case 10 % GTA_EM.EM_M
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_P % __GTA_EM.EM_P__
+				case 11 % GTA_EM.EM_P
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_D % __GTA_EM.EM_D__
+				case 12 % GTA_EM.EM_D
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_R % __GTA_EM.EM_R__
+				case 13 % GTA_EM.EM_R
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_Q % __GTA_EM.EM_Q__
+				case 14 % GTA_EM.EM_Q
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_E % __GTA_EM.EM_E__
+				case 15 % GTA_EM.EM_E
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_F % __GTA_EM.EM_F__
+				case 16 % GTA_EM.EM_F
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_G % __GTA_EM.EM_G__
+				case 17 % GTA_EM.EM_G
 					prop_default = Format.getFormatDefault(1, GTA_EM.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_EM < ConcreteElement
 			prop = GTA_EM.getPropProp(pointer);
 			
 			switch prop
-				case GTA_EM.EM_C % __GTA_EM.EM_C__
+				case 9 % GTA_EM.EM_C
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_M % __GTA_EM.EM_M__
+				case 10 % GTA_EM.EM_M
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_P % __GTA_EM.EM_P__
+				case 11 % GTA_EM.EM_P
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_D % __GTA_EM.EM_D__
+				case 12 % GTA_EM.EM_D
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_R % __GTA_EM.EM_R__
+				case 13 % GTA_EM.EM_R
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_Q % __GTA_EM.EM_Q__
+				case 14 % GTA_EM.EM_Q
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_E % __GTA_EM.EM_E__
+				case 15 % GTA_EM.EM_E
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_F % __GTA_EM.EM_F__
+				case 16 % GTA_EM.EM_F
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
-				case GTA_EM.EM_G % __GTA_EM.EM_G__
+				case 17 % GTA_EM.EM_G
 					check = Format.checkFormat(1, value, GTA_EM.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

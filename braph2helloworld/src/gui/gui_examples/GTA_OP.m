@@ -111,7 +111,7 @@ classdef GTA_OP < ConcreteElement
 	%
 	% See also PanelPropOption.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		OP_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_OP < ConcreteElement
 			prop = GTA_OP.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_OP.OP_C % __GTA_OP.OP_C__
+				case 9 % GTA_OP.OP_C
 					prop_settings = Format.getFormatSettings(5);
-				case GTA_OP.OP_M % __GTA_OP.OP_M__
+				case 10 % GTA_OP.OP_M
 					prop_settings = {'M_A', 'M_B', 'M_C', 'M_D', 'M_E', 'M_F', 'M_G', 'M_H', 'M_J', 'M_K'};
-				case GTA_OP.OP_P % __GTA_OP.OP_P__
+				case 11 % GTA_OP.OP_P
 					prop_settings = {'P_A', 'P_B', 'P_C', 'P_D', 'P_E', 'P_F', 'P_G', 'P_H', 'P_J', 'P_K'};
-				case GTA_OP.OP_D % __GTA_OP.OP_D__
+				case 12 % GTA_OP.OP_D
 					prop_settings = {'D_A', 'D_B', 'D_C', 'D_D', 'D_E', 'D_F', 'D_G', 'D_H', 'D_J', 'D_K'};
-				case GTA_OP.OP_R % __GTA_OP.OP_R__
+				case 13 % GTA_OP.OP_R
 					prop_settings = {'R_A', 'R_B', 'R_C', 'R_D', 'R_E', 'R_F', 'R_G', 'R_H', 'R_J', 'R_K'};
-				case GTA_OP.OP_Q % __GTA_OP.OP_Q__
+				case 14 % GTA_OP.OP_Q
 					prop_settings = {'Q_A', 'Q_B', 'Q_C', 'Q_D', 'Q_E', 'Q_F', 'Q_G', 'Q_H', 'Q_J', 'Q_K'};
-				case GTA_OP.OP_E % __GTA_OP.OP_E__
+				case 15 % GTA_OP.OP_E
 					prop_settings = {'E_A', 'E_B', 'E_C', 'E_D', 'E_E', 'E_F', 'E_G', 'E_H', 'E_J', 'E_K'};
-				case GTA_OP.OP_F % __GTA_OP.OP_F__
+				case 16 % GTA_OP.OP_F
 					prop_settings = {'F_A', 'F_B', 'F_C', 'F_D', 'F_E', 'F_F', 'F_G', 'F_H', 'F_J', 'F_K'};
-				case GTA_OP.OP_G % __GTA_OP.OP_G__
+				case 17 % GTA_OP.OP_G
 					prop_settings = {'G_A', 'G_B', 'G_C', 'G_D', 'G_E', 'G_F', 'G_G', 'G_H', 'G_J', 'G_K'};
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_OP < ConcreteElement
 			prop = GTA_OP.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_OP.OP_C % __GTA_OP.OP_C__
+				case 9 % GTA_OP.OP_C
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_M % __GTA_OP.OP_M__
+				case 10 % GTA_OP.OP_M
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_P % __GTA_OP.OP_P__
+				case 11 % GTA_OP.OP_P
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_D % __GTA_OP.OP_D__
+				case 12 % GTA_OP.OP_D
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_R % __GTA_OP.OP_R__
+				case 13 % GTA_OP.OP_R
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_Q % __GTA_OP.OP_Q__
+				case 14 % GTA_OP.OP_Q
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_E % __GTA_OP.OP_E__
+				case 15 % GTA_OP.OP_E
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_F % __GTA_OP.OP_F__
+				case 16 % GTA_OP.OP_F
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_G % __GTA_OP.OP_G__
+				case 17 % GTA_OP.OP_G
 					prop_default = Format.getFormatDefault(5, GTA_OP.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_OP < ConcreteElement
 			prop = GTA_OP.getPropProp(pointer);
 			
 			switch prop
-				case GTA_OP.OP_C % __GTA_OP.OP_C__
+				case 9 % GTA_OP.OP_C
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_M % __GTA_OP.OP_M__
+				case 10 % GTA_OP.OP_M
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_P % __GTA_OP.OP_P__
+				case 11 % GTA_OP.OP_P
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_D % __GTA_OP.OP_D__
+				case 12 % GTA_OP.OP_D
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_R % __GTA_OP.OP_R__
+				case 13 % GTA_OP.OP_R
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_Q % __GTA_OP.OP_Q__
+				case 14 % GTA_OP.OP_Q
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_E % __GTA_OP.OP_E__
+				case 15 % GTA_OP.OP_E
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_F % __GTA_OP.OP_F__
+				case 16 % GTA_OP.OP_F
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
-				case GTA_OP.OP_G % __GTA_OP.OP_G__
+				case 17 % GTA_OP.OP_G
 					check = Format.checkFormat(5, value, GTA_OP.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end
@@ -746,7 +746,7 @@ classdef GTA_OP < ConcreteElement
 			%  checkValue.
 			
 			switch prop
-				case GTA_OP.OP_M % __GTA_OP.OP_M__
+				case 10 % GTA_OP.OP_M
 					if strcmp(gt.get('OP_M'), 'M_B')
 					    gt.set( ...
 					        'OP_P', 'P_B', ...
@@ -756,7 +756,7 @@ classdef GTA_OP < ConcreteElement
 					        )
 					end
 					
-				case GTA_OP.OP_P % __GTA_OP.OP_P__
+				case 11 % GTA_OP.OP_P
 					if strcmp(gt.get('OP_P'), 'P_C')
 					    gt.set( ...
 					        'OP_M', 'M_C', ...
@@ -766,7 +766,7 @@ classdef GTA_OP < ConcreteElement
 					        )
 					end
 					
-				case GTA_OP.OP_D % __GTA_OP.OP_D__
+				case 12 % GTA_OP.OP_D
 					if strcmp(gt.get('OP_D'), 'D_D')
 					    gt.set( ...
 					        'OP_M', 'M_D', ...
@@ -776,7 +776,7 @@ classdef GTA_OP < ConcreteElement
 					        )
 					end
 					
-				case GTA_OP.OP_F % __GTA_OP.OP_F__
+				case 16 % GTA_OP.OP_F
 					if strcmp(gt.get('OP_F'), 'F_E')
 					    gt.set( ...
 					        'OP_M', 'M_E', ...
@@ -786,7 +786,7 @@ classdef GTA_OP < ConcreteElement
 					        )
 					end
 					
-				case GTA_OP.OP_G % __GTA_OP.OP_G__
+				case 17 % GTA_OP.OP_G
 					if strcmp(gt.get('OP_G'), 'G_F')
 					    gt.set( ...
 					        'OP_M', 'M_F', ...
@@ -797,7 +797,7 @@ classdef GTA_OP < ConcreteElement
 					end
 					
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						postset@ConcreteElement(gt, prop);
 					end
 			end
@@ -820,8 +820,8 @@ classdef GTA_OP < ConcreteElement
 			%  postset, postprocessing, checkValue.
 			
 			switch prop
-				case GTA_OP.OP_R % __GTA_OP.OP_R__
-					rng_settings_ = rng(); rng(gt.getPropSeed(GTA_OP.OP_R), 'twister')
+				case 13 % GTA_OP.OP_R
+					rng_settings_ = rng(); rng(gt.getPropSeed(13), 'twister')
 					
 					settings = GTA_OP.getPropSettings('OP_R');
 					index = randi(length(settings));
@@ -829,18 +829,18 @@ classdef GTA_OP < ConcreteElement
 					
 					rng(rng_settings_)
 					
-				case GTA_OP.OP_Q % __GTA_OP.OP_Q__
+				case 14 % GTA_OP.OP_Q
 					settings = GTA_OP.getPropSettings('OP_Q');
 					index = randi(length(settings));
 					value = settings{index};
 					
-				case GTA_OP.OP_E % __GTA_OP.OP_E__
+				case 15 % GTA_OP.OP_E
 					settings = GTA_OP.getPropSettings('OP_E');
 					index = randi(length(settings));
 					value = settings{index};
 					
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						value = calculateValue@ConcreteElement(gt, prop, varargin{:});
 					else
 						value = calculateValue@Element(gt, prop, varargin{:});

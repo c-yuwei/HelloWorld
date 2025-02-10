@@ -111,7 +111,7 @@ classdef GTA_NR < ConcreteElement
 	%
 	% See also PanelPropRVector.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		NR_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_NR < ConcreteElement
 			prop = GTA_NR.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_NR.NR_C % __GTA_NR.NR_C__
+				case 9 % GTA_NR.NR_C
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_M % __GTA_NR.NR_M__
+				case 10 % GTA_NR.NR_M
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_P % __GTA_NR.NR_P__
+				case 11 % GTA_NR.NR_P
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_D % __GTA_NR.NR_D__
+				case 12 % GTA_NR.NR_D
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_R % __GTA_NR.NR_R__
+				case 13 % GTA_NR.NR_R
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_Q % __GTA_NR.NR_Q__
+				case 14 % GTA_NR.NR_Q
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_E % __GTA_NR.NR_E__
+				case 15 % GTA_NR.NR_E
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_F % __GTA_NR.NR_F__
+				case 16 % GTA_NR.NR_F
 					prop_settings = Format.getFormatSettings(12);
-				case GTA_NR.NR_G % __GTA_NR.NR_G__
+				case 17 % GTA_NR.NR_G
 					prop_settings = Format.getFormatSettings(12);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_NR < ConcreteElement
 			prop = GTA_NR.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_NR.NR_C % __GTA_NR.NR_C__
+				case 9 % GTA_NR.NR_C
 					prop_default = [1 2 3 4 5];
-				case GTA_NR.NR_M % __GTA_NR.NR_M__
+				case 10 % GTA_NR.NR_M
 					prop_default = [1 2 3 4 5];
-				case GTA_NR.NR_P % __GTA_NR.NR_P__
+				case 11 % GTA_NR.NR_P
 					prop_default = [1 2 3 4 5];
-				case GTA_NR.NR_D % __GTA_NR.NR_D__
+				case 12 % GTA_NR.NR_D
 					prop_default = [1 2 3 4 5];
-				case GTA_NR.NR_R % __GTA_NR.NR_R__
+				case 13 % GTA_NR.NR_R
 					prop_default = Format.getFormatDefault(12, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_Q % __GTA_NR.NR_Q__
+				case 14 % GTA_NR.NR_Q
 					prop_default = Format.getFormatDefault(12, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_E % __GTA_NR.NR_E__
+				case 15 % GTA_NR.NR_E
 					prop_default = Format.getFormatDefault(12, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_F % __GTA_NR.NR_F__
+				case 16 % GTA_NR.NR_F
 					prop_default = [1 2 3 4 5];
-				case GTA_NR.NR_G % __GTA_NR.NR_G__
+				case 17 % GTA_NR.NR_G
 					prop_default = [1 2 3 4 5];
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_NR < ConcreteElement
 			prop = GTA_NR.getPropProp(pointer);
 			
 			switch prop
-				case GTA_NR.NR_C % __GTA_NR.NR_C__
+				case 9 % GTA_NR.NR_C
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_M % __GTA_NR.NR_M__
+				case 10 % GTA_NR.NR_M
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_P % __GTA_NR.NR_P__
+				case 11 % GTA_NR.NR_P
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_D % __GTA_NR.NR_D__
+				case 12 % GTA_NR.NR_D
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_R % __GTA_NR.NR_R__
+				case 13 % GTA_NR.NR_R
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_Q % __GTA_NR.NR_Q__
+				case 14 % GTA_NR.NR_Q
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_E % __GTA_NR.NR_E__
+				case 15 % GTA_NR.NR_E
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_F % __GTA_NR.NR_F__
+				case 16 % GTA_NR.NR_F
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
-				case GTA_NR.NR_G % __GTA_NR.NR_G__
+				case 17 % GTA_NR.NR_G
 					check = Format.checkFormat(12, value, GTA_NR.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end
@@ -749,21 +749,21 @@ classdef GTA_NR < ConcreteElement
 			%  postset, postprocessing, checkValue.
 			
 			switch prop
-				case GTA_NR.NR_R % __GTA_NR.NR_R__
-					rng_settings_ = rng(); rng(gt.getPropSeed(GTA_NR.NR_R), 'twister')
+				case 13 % GTA_NR.NR_R
+					rng_settings_ = rng(); rng(gt.getPropSeed(13), 'twister')
 					
 					value = rand(1, 10);
 					
 					rng(rng_settings_)
 					
-				case GTA_NR.NR_Q % __GTA_NR.NR_Q__
+				case 14 % GTA_NR.NR_Q
 					value = rand(1, 10);
 					
-				case GTA_NR.NR_E % __GTA_NR.NR_E__
+				case 15 % GTA_NR.NR_E
 					value = rand(1, 10);
 					
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						value = calculateValue@ConcreteElement(gt, prop, varargin{:});
 					else
 						value = calculateValue@Element(gt, prop, varargin{:});

@@ -111,7 +111,7 @@ classdef GTA_AL < ConcreteElement
 	%
 	% See also PanelPropAlpha.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		AL_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_AL < ConcreteElement
 			prop = GTA_AL.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_AL.AL_C % __GTA_AL.AL_C__
+				case 9 % GTA_AL.AL_C
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_M % __GTA_AL.AL_M__
+				case 10 % GTA_AL.AL_M
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_P % __GTA_AL.AL_P__
+				case 11 % GTA_AL.AL_P
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_D % __GTA_AL.AL_D__
+				case 12 % GTA_AL.AL_D
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_R % __GTA_AL.AL_R__
+				case 13 % GTA_AL.AL_R
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_Q % __GTA_AL.AL_Q__
+				case 14 % GTA_AL.AL_Q
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_E % __GTA_AL.AL_E__
+				case 15 % GTA_AL.AL_E
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_F % __GTA_AL.AL_F__
+				case 16 % GTA_AL.AL_F
 					prop_settings = Format.getFormatSettings(21);
-				case GTA_AL.AL_G % __GTA_AL.AL_G__
+				case 17 % GTA_AL.AL_G
 					prop_settings = Format.getFormatSettings(21);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_AL < ConcreteElement
 			prop = GTA_AL.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_AL.AL_C % __GTA_AL.AL_C__
+				case 9 % GTA_AL.AL_C
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_M % __GTA_AL.AL_M__
+				case 10 % GTA_AL.AL_M
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_P % __GTA_AL.AL_P__
+				case 11 % GTA_AL.AL_P
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_D % __GTA_AL.AL_D__
+				case 12 % GTA_AL.AL_D
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_R % __GTA_AL.AL_R__
+				case 13 % GTA_AL.AL_R
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_Q % __GTA_AL.AL_Q__
+				case 14 % GTA_AL.AL_Q
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_E % __GTA_AL.AL_E__
+				case 15 % GTA_AL.AL_E
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_F % __GTA_AL.AL_F__
+				case 16 % GTA_AL.AL_F
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_G % __GTA_AL.AL_G__
+				case 17 % GTA_AL.AL_G
 					prop_default = Format.getFormatDefault(21, GTA_AL.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_AL < ConcreteElement
 			prop = GTA_AL.getPropProp(pointer);
 			
 			switch prop
-				case GTA_AL.AL_C % __GTA_AL.AL_C__
+				case 9 % GTA_AL.AL_C
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_M % __GTA_AL.AL_M__
+				case 10 % GTA_AL.AL_M
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_P % __GTA_AL.AL_P__
+				case 11 % GTA_AL.AL_P
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_D % __GTA_AL.AL_D__
+				case 12 % GTA_AL.AL_D
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_R % __GTA_AL.AL_R__
+				case 13 % GTA_AL.AL_R
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_Q % __GTA_AL.AL_Q__
+				case 14 % GTA_AL.AL_Q
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_E % __GTA_AL.AL_E__
+				case 15 % GTA_AL.AL_E
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_F % __GTA_AL.AL_F__
+				case 16 % GTA_AL.AL_F
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
-				case GTA_AL.AL_G % __GTA_AL.AL_G__
+				case 17 % GTA_AL.AL_G
 					check = Format.checkFormat(21, value, GTA_AL.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

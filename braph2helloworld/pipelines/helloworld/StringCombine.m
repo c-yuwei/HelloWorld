@@ -106,7 +106,7 @@ classdef StringCombine < ConcreteElement
 	%
 	% See also StringUnit, PanelPropString.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		SU1 = 9; %CET: Computational Efficiency Trick
@@ -517,13 +517,13 @@ classdef StringCombine < ConcreteElement
 			prop = StringCombine.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case StringCombine.SU1 % __StringCombine.SU1__
+				case 9 % StringCombine.SU1
 					prop_settings = 'StringUnit';
-				case StringCombine.SU2 % __StringCombine.SU2__
+				case 10 % StringCombine.SU2
 					prop_settings = 'StringUnit';
-				case StringCombine.S_COMBINED % __StringCombine.S_COMBINED__
+				case 11 % StringCombine.S_COMBINED
 					prop_settings = Format.getFormatSettings(2);
-				case StringCombine.TEMPLATE % __StringCombine.TEMPLATE__
+				case 4 % StringCombine.TEMPLATE
 					prop_settings = 'StringCombine';
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -552,25 +552,25 @@ classdef StringCombine < ConcreteElement
 			prop = StringCombine.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case StringCombine.SU1 % __StringCombine.SU1__
+				case 9 % StringCombine.SU1
 					prop_default = Format.getFormatDefault(8, StringCombine.getPropSettings(prop));
-				case StringCombine.SU2 % __StringCombine.SU2__
+				case 10 % StringCombine.SU2
 					prop_default = Format.getFormatDefault(8, StringCombine.getPropSettings(prop));
-				case StringCombine.S_COMBINED % __StringCombine.S_COMBINED__
+				case 11 % StringCombine.S_COMBINED
 					prop_default = Format.getFormatDefault(2, StringCombine.getPropSettings(prop));
-				case StringCombine.ELCLASS % __StringCombine.ELCLASS__
+				case 1 % StringCombine.ELCLASS
 					prop_default = 'StringCombine';
-				case StringCombine.NAME % __StringCombine.NAME__
+				case 2 % StringCombine.NAME
 					prop_default = 'String Combine';
-				case StringCombine.DESCRIPTION % __StringCombine.DESCRIPTION__
+				case 3 % StringCombine.DESCRIPTION
 					prop_default = 'A String Combine (StringCombine) combines the strings from two string units. This element is created for distribution demonstration purpose.';
-				case StringCombine.TEMPLATE % __StringCombine.TEMPLATE__
+				case 4 % StringCombine.TEMPLATE
 					prop_default = Format.getFormatDefault(8, StringCombine.getPropSettings(prop));
-				case StringCombine.ID % __StringCombine.ID__
+				case 5 % StringCombine.ID
 					prop_default = 'StringCombine ID';
-				case StringCombine.LABEL % __StringCombine.LABEL__
+				case 6 % StringCombine.LABEL
 					prop_default = 'StringCombine label';
-				case StringCombine.NOTES % __StringCombine.NOTES__
+				case 7 % StringCombine.NOTES
 					prop_default = 'StringCombine notes';
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -636,16 +636,16 @@ classdef StringCombine < ConcreteElement
 			prop = StringCombine.getPropProp(pointer);
 			
 			switch prop
-				case StringCombine.SU1 % __StringCombine.SU1__
+				case 9 % StringCombine.SU1
 					check = Format.checkFormat(8, value, StringCombine.getPropSettings(prop));
-				case StringCombine.SU2 % __StringCombine.SU2__
+				case 10 % StringCombine.SU2
 					check = Format.checkFormat(8, value, StringCombine.getPropSettings(prop));
-				case StringCombine.S_COMBINED % __StringCombine.S_COMBINED__
+				case 11 % StringCombine.S_COMBINED
 					check = Format.checkFormat(2, value, StringCombine.getPropSettings(prop));
-				case StringCombine.TEMPLATE % __StringCombine.TEMPLATE__
+				case 4 % StringCombine.TEMPLATE
 					check = Format.checkFormat(8, value, StringCombine.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end
@@ -678,15 +678,15 @@ classdef StringCombine < ConcreteElement
 			%  postset, postprocessing, checkValue.
 			
 			switch prop
-				case StringCombine.S_COMBINED % __StringCombine.S_COMBINED__
-					rng_settings_ = rng(); rng(sc.getPropSeed(StringCombine.S_COMBINED), 'twister')
+				case 11 % StringCombine.S_COMBINED
+					rng_settings_ = rng(); rng(sc.getPropSeed(11), 'twister')
 					
 					value = [sc.get('SU1').get('S') ' ' sc.get('SU2').get('S')];
 					
 					rng(rng_settings_)
 					
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						value = calculateValue@ConcreteElement(sc, prop, varargin{:});
 					else
 						value = calculateValue@Element(sc, prop, varargin{:});

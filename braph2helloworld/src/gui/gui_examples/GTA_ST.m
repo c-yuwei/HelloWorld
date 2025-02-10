@@ -111,7 +111,7 @@ classdef GTA_ST < ConcreteElement
 	%
 	% See also PanelPropSring.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		ST_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_ST < ConcreteElement
 			prop = GTA_ST.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_ST.ST_C % __GTA_ST.ST_C__
+				case 9 % GTA_ST.ST_C
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_M % __GTA_ST.ST_M__
+				case 10 % GTA_ST.ST_M
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_P % __GTA_ST.ST_P__
+				case 11 % GTA_ST.ST_P
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_D % __GTA_ST.ST_D__
+				case 12 % GTA_ST.ST_D
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_R % __GTA_ST.ST_R__
+				case 13 % GTA_ST.ST_R
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_Q % __GTA_ST.ST_Q__
+				case 14 % GTA_ST.ST_Q
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_E % __GTA_ST.ST_E__
+				case 15 % GTA_ST.ST_E
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_F % __GTA_ST.ST_F__
+				case 16 % GTA_ST.ST_F
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST.ST_G % __GTA_ST.ST_G__
+				case 17 % GTA_ST.ST_G
 					prop_settings = Format.getFormatSettings(2);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_ST < ConcreteElement
 			prop = GTA_ST.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_ST.ST_C % __GTA_ST.ST_C__
+				case 9 % GTA_ST.ST_C
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_M % __GTA_ST.ST_M__
+				case 10 % GTA_ST.ST_M
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_P % __GTA_ST.ST_P__
+				case 11 % GTA_ST.ST_P
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_D % __GTA_ST.ST_D__
+				case 12 % GTA_ST.ST_D
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_R % __GTA_ST.ST_R__
+				case 13 % GTA_ST.ST_R
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_Q % __GTA_ST.ST_Q__
+				case 14 % GTA_ST.ST_Q
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_E % __GTA_ST.ST_E__
+				case 15 % GTA_ST.ST_E
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_F % __GTA_ST.ST_F__
+				case 16 % GTA_ST.ST_F
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_G % __GTA_ST.ST_G__
+				case 17 % GTA_ST.ST_G
 					prop_default = Format.getFormatDefault(2, GTA_ST.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_ST < ConcreteElement
 			prop = GTA_ST.getPropProp(pointer);
 			
 			switch prop
-				case GTA_ST.ST_C % __GTA_ST.ST_C__
+				case 9 % GTA_ST.ST_C
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_M % __GTA_ST.ST_M__
+				case 10 % GTA_ST.ST_M
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_P % __GTA_ST.ST_P__
+				case 11 % GTA_ST.ST_P
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_D % __GTA_ST.ST_D__
+				case 12 % GTA_ST.ST_D
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_R % __GTA_ST.ST_R__
+				case 13 % GTA_ST.ST_R
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_Q % __GTA_ST.ST_Q__
+				case 14 % GTA_ST.ST_Q
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_E % __GTA_ST.ST_E__
+				case 15 % GTA_ST.ST_E
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_F % __GTA_ST.ST_F__
+				case 16 % GTA_ST.ST_F
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
-				case GTA_ST.ST_G % __GTA_ST.ST_G__
+				case 17 % GTA_ST.ST_G
 					check = Format.checkFormat(2, value, GTA_ST.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

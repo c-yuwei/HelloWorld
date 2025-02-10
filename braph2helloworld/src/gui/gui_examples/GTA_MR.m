@@ -111,7 +111,7 @@ classdef GTA_MR < ConcreteElement
 	%
 	% See also PanelPropMarker.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		MR_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_MR < ConcreteElement
 			prop = GTA_MR.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_MR.MR_C % __GTA_MR.MR_C__
+				case 9 % GTA_MR.MR_C
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_M % __GTA_MR.MR_M__
+				case 10 % GTA_MR.MR_M
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_P % __GTA_MR.MR_P__
+				case 11 % GTA_MR.MR_P
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_D % __GTA_MR.MR_D__
+				case 12 % GTA_MR.MR_D
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_R % __GTA_MR.MR_R__
+				case 13 % GTA_MR.MR_R
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_Q % __GTA_MR.MR_Q__
+				case 14 % GTA_MR.MR_Q
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_E % __GTA_MR.MR_E__
+				case 15 % GTA_MR.MR_E
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_F % __GTA_MR.MR_F__
+				case 16 % GTA_MR.MR_F
 					prop_settings = Format.getFormatSettings(23);
-				case GTA_MR.MR_G % __GTA_MR.MR_G__
+				case 17 % GTA_MR.MR_G
 					prop_settings = Format.getFormatSettings(23);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_MR < ConcreteElement
 			prop = GTA_MR.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_MR.MR_C % __GTA_MR.MR_C__
+				case 9 % GTA_MR.MR_C
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_M % __GTA_MR.MR_M__
+				case 10 % GTA_MR.MR_M
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_P % __GTA_MR.MR_P__
+				case 11 % GTA_MR.MR_P
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_D % __GTA_MR.MR_D__
+				case 12 % GTA_MR.MR_D
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_R % __GTA_MR.MR_R__
+				case 13 % GTA_MR.MR_R
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_Q % __GTA_MR.MR_Q__
+				case 14 % GTA_MR.MR_Q
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_E % __GTA_MR.MR_E__
+				case 15 % GTA_MR.MR_E
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_F % __GTA_MR.MR_F__
+				case 16 % GTA_MR.MR_F
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_G % __GTA_MR.MR_G__
+				case 17 % GTA_MR.MR_G
 					prop_default = Format.getFormatDefault(23, GTA_MR.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_MR < ConcreteElement
 			prop = GTA_MR.getPropProp(pointer);
 			
 			switch prop
-				case GTA_MR.MR_C % __GTA_MR.MR_C__
+				case 9 % GTA_MR.MR_C
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_M % __GTA_MR.MR_M__
+				case 10 % GTA_MR.MR_M
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_P % __GTA_MR.MR_P__
+				case 11 % GTA_MR.MR_P
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_D % __GTA_MR.MR_D__
+				case 12 % GTA_MR.MR_D
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_R % __GTA_MR.MR_R__
+				case 13 % GTA_MR.MR_R
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_Q % __GTA_MR.MR_Q__
+				case 14 % GTA_MR.MR_Q
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_E % __GTA_MR.MR_E__
+				case 15 % GTA_MR.MR_E
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_F % __GTA_MR.MR_F__
+				case 16 % GTA_MR.MR_F
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
-				case GTA_MR.MR_G % __GTA_MR.MR_G__
+				case 17 % GTA_MR.MR_G
 					check = Format.checkFormat(23, value, GTA_MR.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

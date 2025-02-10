@@ -111,7 +111,7 @@ classdef GTA_ST_TA < ConcreteElement
 	%
 	% See also PanelPropStringTextArea.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		ST_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_ST_TA < ConcreteElement
 			prop = GTA_ST_TA.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_ST_TA.ST_C % __GTA_ST_TA.ST_C__
+				case 9 % GTA_ST_TA.ST_C
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_M % __GTA_ST_TA.ST_M__
+				case 10 % GTA_ST_TA.ST_M
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_P % __GTA_ST_TA.ST_P__
+				case 11 % GTA_ST_TA.ST_P
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_D % __GTA_ST_TA.ST_D__
+				case 12 % GTA_ST_TA.ST_D
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_R % __GTA_ST_TA.ST_R__
+				case 13 % GTA_ST_TA.ST_R
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_Q % __GTA_ST_TA.ST_Q__
+				case 14 % GTA_ST_TA.ST_Q
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_E % __GTA_ST_TA.ST_E__
+				case 15 % GTA_ST_TA.ST_E
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_F % __GTA_ST_TA.ST_F__
+				case 16 % GTA_ST_TA.ST_F
 					prop_settings = Format.getFormatSettings(2);
-				case GTA_ST_TA.ST_G % __GTA_ST_TA.ST_G__
+				case 17 % GTA_ST_TA.ST_G
 					prop_settings = Format.getFormatSettings(2);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_ST_TA < ConcreteElement
 			prop = GTA_ST_TA.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_ST_TA.ST_C % __GTA_ST_TA.ST_C__
+				case 9 % GTA_ST_TA.ST_C
 					prop_default = Format.getFormatDefault(2, GTA_ST_TA.getPropSettings(prop));
-				case GTA_ST_TA.ST_M % __GTA_ST_TA.ST_M__
+				case 10 % GTA_ST_TA.ST_M
 					prop_default = 'M\nM\nM\n';
-				case GTA_ST_TA.ST_P % __GTA_ST_TA.ST_P__
+				case 11 % GTA_ST_TA.ST_P
 					prop_default = 'P\nP\nP\n';
-				case GTA_ST_TA.ST_D % __GTA_ST_TA.ST_D__
+				case 12 % GTA_ST_TA.ST_D
 					prop_default = 'D\nD\nD\n';
-				case GTA_ST_TA.ST_R % __GTA_ST_TA.ST_R__
+				case 13 % GTA_ST_TA.ST_R
 					prop_default = 'result\ndefault\n';
-				case GTA_ST_TA.ST_Q % __GTA_ST_TA.ST_Q__
+				case 14 % GTA_ST_TA.ST_Q
 					prop_default = 'query\ndefault\n';
-				case GTA_ST_TA.ST_E % __GTA_ST_TA.ST_E__
+				case 15 % GTA_ST_TA.ST_E
 					prop_default = 'evanescent\ndefault\n';
-				case GTA_ST_TA.ST_F % __GTA_ST_TA.ST_F__
+				case 16 % GTA_ST_TA.ST_F
 					prop_default = 'F\nF\nF\n';
-				case GTA_ST_TA.ST_G % __GTA_ST_TA.ST_G__
+				case 17 % GTA_ST_TA.ST_G
 					prop_default = 'G\nG\nG\n';
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,41 +697,41 @@ classdef GTA_ST_TA < ConcreteElement
 			prop = GTA_ST_TA.getPropProp(pointer);
 			
 			switch prop
-				case GTA_ST_TA.ST_C % __GTA_ST_TA.ST_C__
+				case 9 % GTA_ST_TA.ST_C
 					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
-				case GTA_ST_TA.ST_M % __GTA_ST_TA.ST_M__
-					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
-					if check
-						check = true;
-					end
-				case GTA_ST_TA.ST_P % __GTA_ST_TA.ST_P__
+				case 10 % GTA_ST_TA.ST_M
 					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
 					if check
 						check = true;
 					end
-				case GTA_ST_TA.ST_D % __GTA_ST_TA.ST_D__
+				case 11 % GTA_ST_TA.ST_P
 					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
 					if check
 						check = true;
 					end
-				case GTA_ST_TA.ST_R % __GTA_ST_TA.ST_R__
-					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
-				case GTA_ST_TA.ST_Q % __GTA_ST_TA.ST_Q__
-					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
-				case GTA_ST_TA.ST_E % __GTA_ST_TA.ST_E__
-					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
-				case GTA_ST_TA.ST_F % __GTA_ST_TA.ST_F__
+				case 12 % GTA_ST_TA.ST_D
 					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
 					if check
 						check = true;
 					end
-				case GTA_ST_TA.ST_G % __GTA_ST_TA.ST_G__
+				case 13 % GTA_ST_TA.ST_R
+					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
+				case 14 % GTA_ST_TA.ST_Q
+					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
+				case 15 % GTA_ST_TA.ST_E
+					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
+				case 16 % GTA_ST_TA.ST_F
+					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
+					if check
+						check = true;
+					end
+				case 17 % GTA_ST_TA.ST_G
 					check = Format.checkFormat(2, value, GTA_ST_TA.getPropSettings(prop));
 					if check
 						check = true;
 					end
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end
@@ -764,21 +764,21 @@ classdef GTA_ST_TA < ConcreteElement
 			%  postset, postprocessing, checkValue.
 			
 			switch prop
-				case GTA_ST_TA.ST_R % __GTA_ST_TA.ST_R__
-					rng_settings_ = rng(); rng(gt.getPropSeed(GTA_ST_TA.ST_R), 'twister')
+				case 13 % GTA_ST_TA.ST_R
+					rng_settings_ = rng(); rng(gt.getPropSeed(13), 'twister')
 					
 					value = 'result\ncalculated\n';
 					
 					rng(rng_settings_)
 					
-				case GTA_ST_TA.ST_Q % __GTA_ST_TA.ST_Q__
+				case 14 % GTA_ST_TA.ST_Q
 					value = 'query\ncalculated\n';
 					
-				case GTA_ST_TA.ST_E % __GTA_ST_TA.ST_E__
+				case 15 % GTA_ST_TA.ST_E
 					value = 'evanescent\ncalculated\n';
 					
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						value = calculateValue@ConcreteElement(gt, prop, varargin{:});
 					else
 						value = calculateValue@Element(gt, prop, varargin{:});
@@ -804,32 +804,32 @@ classdef GTA_ST_TA < ConcreteElement
 			%  PanelPropString, PanelPropStringList.
 			
 			switch prop
-				case GTA_ST_TA.ST_C % __GTA_ST_TA.ST_C__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_C, varargin{:});
+				case 9 % GTA_ST_TA.ST_C
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 9, varargin{:});
 					
-				case GTA_ST_TA.ST_M % __GTA_ST_TA.ST_M__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_M, varargin{:});
+				case 10 % GTA_ST_TA.ST_M
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 10, varargin{:});
 					
-				case GTA_ST_TA.ST_P % __GTA_ST_TA.ST_P__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_P, varargin{:});
+				case 11 % GTA_ST_TA.ST_P
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 11, varargin{:});
 					
-				case GTA_ST_TA.ST_D % __GTA_ST_TA.ST_D__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_D, varargin{:});
+				case 12 % GTA_ST_TA.ST_D
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 12, varargin{:});
 					
-				case GTA_ST_TA.ST_R % __GTA_ST_TA.ST_R__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_R, varargin{:});
+				case 13 % GTA_ST_TA.ST_R
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 13, varargin{:});
 					
-				case GTA_ST_TA.ST_Q % __GTA_ST_TA.ST_Q__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_Q, varargin{:});
+				case 14 % GTA_ST_TA.ST_Q
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 14, varargin{:});
 					
-				case GTA_ST_TA.ST_E % __GTA_ST_TA.ST_E__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_E, varargin{:});
+				case 15 % GTA_ST_TA.ST_E
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 15, varargin{:});
 					
-				case GTA_ST_TA.ST_F % __GTA_ST_TA.ST_F__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_F, varargin{:});
+				case 16 % GTA_ST_TA.ST_F
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 16, varargin{:});
 					
-				case GTA_ST_TA.ST_G % __GTA_ST_TA.ST_G__
-					pr = PanelPropStringTextArea('EL', gt, 'PROP', GTA_ST_TA.ST_G, varargin{:});
+				case 17 % GTA_ST_TA.ST_G
+					pr = PanelPropStringTextArea('EL', gt, 'PROP', 17, varargin{:});
 					
 				otherwise
 					pr = getPanelProp@ConcreteElement(gt, prop, varargin{:});

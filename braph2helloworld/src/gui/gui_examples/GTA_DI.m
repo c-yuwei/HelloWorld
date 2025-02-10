@@ -111,7 +111,7 @@ classdef GTA_DI < ConcreteElement
 	%
 	% See also PanelPropIDict.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		DI_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_DI < ConcreteElement
 			prop = GTA_DI.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_DI.DI_C % __GTA_DI.DI_C__
+				case 9 % GTA_DI.DI_C
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_M % __GTA_DI.DI_M__
+				case 10 % GTA_DI.DI_M
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_P % __GTA_DI.DI_P__
+				case 11 % GTA_DI.DI_P
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_D % __GTA_DI.DI_D__
+				case 12 % GTA_DI.DI_D
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_R % __GTA_DI.DI_R__
+				case 13 % GTA_DI.DI_R
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_Q % __GTA_DI.DI_Q__
+				case 14 % GTA_DI.DI_Q
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_E % __GTA_DI.DI_E__
+				case 15 % GTA_DI.DI_E
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_F % __GTA_DI.DI_F__
+				case 16 % GTA_DI.DI_F
 					prop_settings = Format.getFormatSettings(10);
-				case GTA_DI.DI_G % __GTA_DI.DI_G__
+				case 17 % GTA_DI.DI_G
 					prop_settings = Format.getFormatSettings(10);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_DI < ConcreteElement
 			prop = GTA_DI.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_DI.DI_C % __GTA_DI.DI_C__
+				case 9 % GTA_DI.DI_C
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_M % __GTA_DI.DI_M__
+				case 10 % GTA_DI.DI_M
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_P % __GTA_DI.DI_P__
+				case 11 % GTA_DI.DI_P
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_D % __GTA_DI.DI_D__
+				case 12 % GTA_DI.DI_D
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_R % __GTA_DI.DI_R__
+				case 13 % GTA_DI.DI_R
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_Q % __GTA_DI.DI_Q__
+				case 14 % GTA_DI.DI_Q
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_E % __GTA_DI.DI_E__
+				case 15 % GTA_DI.DI_E
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_F % __GTA_DI.DI_F__
+				case 16 % GTA_DI.DI_F
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_G % __GTA_DI.DI_G__
+				case 17 % GTA_DI.DI_G
 					prop_default = Format.getFormatDefault(10, GTA_DI.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_DI < ConcreteElement
 			prop = GTA_DI.getPropProp(pointer);
 			
 			switch prop
-				case GTA_DI.DI_C % __GTA_DI.DI_C__
+				case 9 % GTA_DI.DI_C
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_M % __GTA_DI.DI_M__
+				case 10 % GTA_DI.DI_M
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_P % __GTA_DI.DI_P__
+				case 11 % GTA_DI.DI_P
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_D % __GTA_DI.DI_D__
+				case 12 % GTA_DI.DI_D
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_R % __GTA_DI.DI_R__
+				case 13 % GTA_DI.DI_R
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_Q % __GTA_DI.DI_Q__
+				case 14 % GTA_DI.DI_Q
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_E % __GTA_DI.DI_E__
+				case 15 % GTA_DI.DI_E
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_F % __GTA_DI.DI_F__
+				case 16 % GTA_DI.DI_F
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
-				case GTA_DI.DI_G % __GTA_DI.DI_G__
+				case 17 % GTA_DI.DI_G
 					check = Format.checkFormat(10, value, GTA_DI.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

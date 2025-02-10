@@ -112,7 +112,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
     % See also Category, Format, NoValue, Callback, ConcreteElement,
     %  IndexedDictionary, handle, matlab.mixin.Copyable.
     %
-    % BUILD BRAPH2 6 Element 6
+    % BUILD BRAPH2 7 Element 7
    
 	properties (Access=private)
         % props is a private struct containing the element properties whose
@@ -162,7 +162,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
         function build = getBuild(el)
             %GETBUILD returns the build of the element.
             %
-            % BUILD = Element.GETBUILD() returns the €6€ = 6.
+            % BUILD = Element.GETBUILD() returns the €7€ = 7.
             %
             % Alternative forms to call this method are:
             %  BUILD = EL.GETBUILD() returns the build of EL.
@@ -174,7 +174,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
 
             % calls from Element
             if nargin == 0
-                build = 6;
+                build = 7;
                 return
             end
             
@@ -671,9 +671,9 @@ classdef Element < Category & Format & matlab.mixin.Copyable
             
             if ~isa(el.props{prop}.callback, 'Callback')
                 cb = Callback('EL', el, 'PROP', prop);
-                cb.props{Callback.EL}.locked = true;
-                cb.props{Callback.PROP}.locked = true;
-                cb.props{Callback.TAG}.locked = true;
+                cb.props{1}.locked = true;
+                cb.props{2}.locked = true;
+                cb.props{3}.locked = true;
                 el.props{prop}.callback = cb;
             end
             
@@ -780,7 +780,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                 value = varargin{i+1};
                 
                 switch el.getPropCategory(prop)
-                    case 2 % 2
+                    case 2 % Category.METADATA
                         value = el.conditioning(prop, value);
                         
                         value = el.preset(prop, value);
@@ -793,7 +793,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
 
                         el.postset(prop); 
                         
-                    case {3 4 8 9} % {3 4 8 9}
+                    case {3 4 8 9} % {Category.PARAMETER Category.DATA Category.FIGURE Category.GUI}
                         if ~el.isLocked(prop)
                             if isa(value, 'Callback')
                                 if el.getPropFormat(prop) ~= value.get('EL').getPropFormat(value.get('PROP'))
@@ -837,7 +837,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                 )                            
                         end
 
-                    case {5 6 7} % {5 6 7}
+                    case {5 6 7} % {Category.RESULT Category.QUERY Category.EVANESCENT}
                         if isa(value, 'NoValue')
                             el.props{prop}.value = Element.getNoValue();
                         else
@@ -849,7 +849,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                 'Probably not a problem, but shouldn''t happen with well-written code!'] ...
                                 )
                         end
-                    case 1 % 1
+                    case 1 % Category.CONSTANT
                         if isa(value, 'NoValue')
                             el.props{prop}.value = Element.getNoValue();
                         else
@@ -915,7 +915,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                 if el.isChecked(prop)
                     value = el.getr(prop);
                     switch el.getPropCategory(prop)
-                        case 2 % 2
+                        case 2 % Category.METADATA
                             if ~isa(value, 'NoValue')
                                 [value_check, value_msg] = el.checkValue(prop, value);
                             else % NoValue
@@ -923,7 +923,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                 value_msg = '';
                             end
 
-                        case {3 4 8 9} % {3 4 8 9}
+                        case {3 4 8 9} % {Category.PARAMETER Category.DATA Category.FIGURE Category.GUI}
                             while isa(value, 'Callback')
                                 value = value.get('EL').get(value.get('PROP'));
                             end
@@ -934,7 +934,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                 value_msg = '';
                             end
 
-                        case {5 6 7} % {5 6 7}
+                        case {5 6 7} % {Category.RESULT Category.QUERY Category.EVANESCENT}
                             if ~isa(value, 'NoValue')
                                 [value_check, value_msg] = el.checkValue(prop, value);
                             else % NoValue
@@ -942,7 +942,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                 value_msg = '';
                             end
                             
-                        case 1 % 1
+                        case 1 % Category.CONSTANT
                             value_check = true;
                             value_msg = '';
                     end
@@ -1016,24 +1016,24 @@ classdef Element < Category & Format & matlab.mixin.Copyable
             value = el.getr(prop);
 
             switch el.getPropCategory(prop)
-                case 1 % 1
+                case 1 % Category.CONSTANT
                     if isa(value, 'NoValue')
                         value = el.getPropDefaultConditioned(prop);
                     end
                     
-                case 2 % 2
+                case 2 % Category.METADATA
                     if isa(value, 'NoValue')
                         value = el.getPropDefaultConditioned(prop);
                     end
 
-                case {3 4 8 9} % {3 4 8 9}
+                case {3 4 8 9} % {Category.PARAMETER Category.DATA Category.FIGURE Category.GUI}
                     if isa(value, 'NoValue')
                         value = el.getPropDefaultConditioned(prop);
                     elseif isa(value, 'Callback')
                         value = value.get('EL').get(value.get('PROP'));
                     end
 
-                case 5 % 5
+                case 5 % Category.RESULT
                     if isa(value, 'NoValue')
 
                         % backup properties (if prop is checked)
@@ -1066,7 +1066,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                         end
                     end
                     
-                case 6 % 6
+                case 6 % Category.QUERY
                     if isa(value, 'NoValue')
 
                         % backup properties (if prop is checked)
@@ -1105,7 +1105,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                         end
                     end
                     
-                case 7 % 7
+                case 7 % Category.EVANESCENT
                     if isa(value, 'NoValue')
 
                         % backup properties (if prop is checked)
@@ -1186,14 +1186,14 @@ classdef Element < Category & Format & matlab.mixin.Copyable
             else
                 if isa(el.props{prop}.value, 'NoValue')
                     switch el.getPropCategory(prop)
-                        case 5 % 5
+                        case 5 % Category.RESULT
                             % calculates the value
                             el.props{prop}.value = el.get(prop);
                             
                             % notify event result memorized
                             notify(el, 'PropMemorized', EventPropMemorized(el, prop))
                             
-                        case 6 % 6
+                        case 6 % Category.QUERY
                             % calculates the value
                             el.props{prop}.value = el.get(prop);
                             
@@ -1208,7 +1208,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                 'If this behavior is intended, consider enclosing the command between warning off and warning on.'] ...
                                 )
                             
-                        case 7 % 7
+                        case 7 % Category.EVANESCENT
                             % calculates the value
                             backup_warning_state = warning('off', ['BRAPH2' ':' class(el)]); % to avoid the warning when memorizing an EVANESCENT property
                             el.props{prop}.value = el.get(prop);
@@ -1217,11 +1217,11 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                             % notify event evanescent memorized
                             notify(el, 'PropMemorized', EventPropMemorized(el, prop))
                             
-                        case {2 3 4 8 9} % {2 3 4 8 9}
+                        case {2 3 4 8 9} % {Category.METADATA Category.PARAMETER Category.DATA Category.FIGURE Category.GUI}
                             % sets the value
                             el.set(prop, el.getPropDefault(prop))
                             
-                        case 1 % 1
+                        case 1 % Category.CONSTANT
                             % retrieves the conitioned default value
                             el.props{prop}.value = el.getPropDefaultConditioned(prop);
                     end
@@ -1765,8 +1765,8 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                             return % check = false;
                         else 
                             for prop = 1:1:el1_list{i}.getPropNumber()
-                                if  el1_list{i}.getPropCategory(prop) ~= 7 ... % 7
-                                        && all(el1_list{i}.getPropFormat(prop) ~= [8 9 10]) ... % [8 9 10]
+                                if  el1_list{i}.getPropCategory(prop) ~= 7 ... % Category.EVANESCENT
+                                        && all(el1_list{i}.getPropFormat(prop) ~= [8 9 10]) ... % [Format.ITEM Format.ITEMLIST Format.IDICT]
                                         && ~isa(el1_list{i}.getr(prop), 'Callback')
                                     if ~isequaln(el1_list{i}.getr(prop), el2_list{i}.getr(prop)) ...
                                             || el1_list{i}.isLocked(prop) ~= el2_list{i}.isLocked(prop)
@@ -1876,7 +1876,7 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                 drawnow()
 
                 el = el.copy();
-                build = 6;
+                build = 7;
                 matlab_version = ver('MATLAB').Version;
                 matlab_version_details = ver();
                 build_log = load('build_log.mat', '-mat');  % % % double-check
@@ -1975,32 +1975,32 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                     elseif isa(value, 'Callback')
                         struct{i}.props{prop}.value = find(cellfun(@(x) value == x, el_list));
                     else
-                        if el.getPropCategory(prop) == 7 % 7 % set to NoValue
+                        if el.getPropCategory(prop) == 7 % Category.EVANESCENT % set to NoValue
                             struct{i}.props{prop}.value = find(cellfun(@(x) Element.getNoValue() == x, el_list));
                         else
                             switch el.getPropFormat(prop)
-                                case 1 % 1
+                                case 1 % Format.EMPTY
                                     struct{i}.props{prop}.value = regexprep(tostring(value), '''', '''''');
-                                case {2 5 6 23 24} % {2 5 6 23 24}
+                                case {2 5 6 23 24} % {Format.STRING Format.OPTION Format.CLASS Format.MARKER Format.LINE}
                                     struct{i}.props{prop}.value = regexprep(tostring(value), '''', '''''');
-                                case {4 11 12 13 14 15 20 21 22} % {4 11 12 13 14 15 20 21 22}
+                                case {4 11 12 13 14 15 20 21 22} % {Format.LOGICAL Format.SCALAR Format.RVECTOR Format.CVECTOR Format.MATRIX Format.SMATRIX Format.COLOR Format.ALPHA Format.SIZE}
                                     struct{i}.props{prop}.value = mat2str(value);
-                                case {7 3} % {7 3}
+                                case {7 3} % {Format.CLASSLIST Format.STRINGLIST}
                                     json_str = '{';
                                     for j = 1:1:length(value)
                                         json_str = [json_str ' ''' value{j} ''' ']; %#ok<AGROW>
                                     end
                                     json_str = [json_str '}']; %#ok<AGROW>
                                     struct{i}.props{prop}.value = json_str;
-                                case {8 10} % {8 10}
+                                case {8 10} % {Format.ITEM Format.IDICT}
                                     struct{i}.props{prop}.value = find(cellfun(@(x) value == x, el_list));
-                                case 9 % 9
+                                case 9 % Format.ITEMLIST
                                     indices = zeros(1, length(value));
                                     for j = 1:1:length(value)
                                         indices(j) = find(cellfun(@(x) value{j} == x, el_list));
                                     end
                                     struct{i}.props{prop}.value = indices;
-                                case 16 % 16
+                                case 16 % Format.CELL
                                     json_str = '{';
                                     for j = 1:1:size(value, 1)
                                         for k = 1:1:size(value, 2)
@@ -2015,9 +2015,9 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                                     end
                                     json_str = [json_str '}']; %#ok<AGROW>
                                     struct{i}.props{prop}.value = json_str;
-                                case 17 % 17 % set to NoValue
+                                case 17 % Format.NET % set to NoValue
                                     struct{i}.props{prop}.value = find(cellfun(@(x) Element.getNoValue() == x, el_list));
-                                case {18 19} % {18 19} % set to NoValue
+                                case {18 19} % {Format.HANDLE Format.HANDLELIST} % set to NoValue
                                     struct{i}.props{prop}.value = find(cellfun(@(x) Element.getNoValue() == x, el_list));
                             end
                         end
@@ -2079,27 +2079,27 @@ classdef Element < Category & Format & matlab.mixin.Copyable
                     prop = el.getPropProp(tag);
 
                     if isnumeric(value)
-                        if ~isequal(el.getPropFormat(prop), 9) || (numel(value) == 1 && isa(el_list{value}, 'NoValue')) % case {8 10}
+                        if ~isequal(el.getPropFormat(prop), 9) || (numel(value) == 1 && isa(el_list{value}, 'NoValue')) % case {Format.ITEM Format.IDICT}
                             el.props{prop}.value = el_list{value};
-                        else % case 9
+                        else % case Format.ITEMLIST
                             indices = value;
                             el.props{prop}.value = el_list(indices)';
                         end
                     else
                         switch el.getPropFormat(prop)
-                            case 1 % 1
+                            case 1 % Format.EMPTY
                                 el.props{prop}.value = eval(value);
-                            case {2 5 6 23 24} % {2 5 6 23 24}
+                            case {2 5 6 23 24} % {Format.STRING Format.OPTION Format.CLASS Format.MARKER Format.LINE}
                                 el.props{prop}.value = eval(value(2:end-1));
-                            case {4 11 12 13 14 15 20 21 22} % {4 11 12 13 14 15 20 21 22}
+                            case {4 11 12 13 14 15 20 21 22} % {Format.LOGICAL Format.SCALAR Format.RVECTOR Format.CVECTOR Format.MATRIX Format.SMATRIX Format.COLOR Format.ALPHA Format.SIZE}
                                 el.props{prop}.value = eval(value);
-                            case {7 3} % {7 3}
+                            case {7 3} % {Format.CLASSLIST Format.STRINGLIST}
                                 el.props{prop}.value = eval(value);
-                            case 16 % 16
+                            case 16 % Format.CELL
                                 el.props{prop}.value = eval(value);
-                            case 17 % 17
+                            case 17 % Format.NET
                                 el.props{prop}.value = Element.getNoValue(); % NET properties are not saved
-                            case {18 19} % {18 19}
+                            case {18 19} % {Format.HANDLE Format.HANDLELIST}
                                 el.props{prop}.value = Element.getNoValue(); % HANDLE and HANDLELIST properties are not saved
                         end
                     end
@@ -2136,126 +2136,126 @@ classdef Element < Category & Format & matlab.mixin.Copyable
             %  PanelPropString, PanelPropStringList.
 
             switch el.getPropFormat(prop)
-                case 1 % 1
+                case 1 % Format.EMPTY
                     pr = PanelProp( ... 
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 2 % 2
+                case 2 % Format.STRING
                     pr = PanelPropString( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 3 % 3
+                case 3 % Format.STRINGLIST
                     pr = PanelPropStringList( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 4 % 4
+                case 4 % Format.LOGICAL
                     pr = PanelPropLogical( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 5 % 5
+                case 5 % Format.OPTION
                     pr = PanelPropOption( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 6 % 6
+                case 6 % Format.CLASS
                     pr = PanelPropClass( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 7 % 7
+                case 7 % Format.CLASSLIST
                     pr = PanelPropClassList( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 8 % 8
+                case 8 % Format.ITEM
                     pr = PanelPropItem( ... 
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 9 % 9
+                case 9 % Format.ITEMLIST
                     pr = PanelPropItemList( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 10 % 10
+                case 10 % Format.IDICT
                     pr = PanelPropIDict( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 11 % 11
+                case 11 % Format.SCALAR
                     pr = PanelPropScalar( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 12 % 12
+                case 12 % Format.RVECTOR
                     pr = PanelPropMatrix( ... 
                         'EL', el, ...
                         'PROP', prop, ... 
                         'ROWNAME', {}, ...
                         varargin{:});
-                case 13 % 13
+                case 13 % Format.CVECTOR
                     pr = PanelPropMatrix( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         'COLUMNNAME', {}, ...
                         varargin{:});
-                case 14 % 14
+                case 14 % Format.MATRIX
                     pr = PanelPropMatrix( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 15 % 15
+                case 15 % Format.SMATRIX
                     pr = PanelPropMatrix( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 16 % 16
+                case 16 % Format.CELL
                     pr = PanelPropCell( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 17 % 17
+                case 17 % Format.NET
                     pr = PanelPropNet( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 18 % 18
-                    warning(['BRAPH2' ':Element'], ['BRAPH2' ':Element \nThis functionality is not implemented yet.\nYou can contact the BRAPH2 developers and ask for it, \nor, even better, implement it yourself and share it with the community!'])
+                case 18 % Format.HANDLE
+                    warning([BRAPH2.STR ':Element'], [BRAPH2.STR ':Element \nThis functionality is not implemented yet.\nYou can contact the BRAPH2 developers and ask for it, \nor, even better, implement it yourself and share it with the community!'])
 % % %                     pr = PanelPropHandle( ...
 % % %                         'EL', el, ...
 % % %                         'PROP', prop, ...
 % % %                         varargin{:});
-                case 19 % 19
-                    warning(['BRAPH2' ':Element'], ['BRAPH2' ':Element \nThis functionality is not implemented yet.\nYou can contact the BRAPH2 developers and ask for it, \nor, even better, implement it yourself and share it with the community!'])
+                case 19 % Format.HANDLELIST
+                    warning([BRAPH2.STR ':Element'], [BRAPH2.STR ':Element \nThis functionality is not implemented yet.\nYou can contact the BRAPH2 developers and ask for it, \nor, even better, implement it yourself and share it with the community!'])
 % % %                     pr = PanelPropHandleList( ...
 % % %                         'EL', el, ...
 % % %                         'PROP', prop, ...
 % % %                         varargin{:});
-                case 20 % 20
+                case 20 % Format.COLOR
                     pr = PanelPropColor( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 21 % 21
+                case 21 % Format.ALPHA
                     pr = PanelPropAlpha( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 22 % 22
+                case 22 % Format.SIZE
                     pr = PanelPropSize( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 23 % 23
+                case 23 % Format.MARKER
                     pr = PanelPropMarker( ...
                         'EL', el, ...
                         'PROP', prop, ...
                         varargin{:});
-                case 24 % 24
+                case 24 % Format.LINE
                     pr = PanelPropLine( ...
                         'EL', el, ...
                         'PROP', prop, ...

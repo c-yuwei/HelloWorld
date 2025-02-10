@@ -104,7 +104,7 @@ classdef StringUnit < ConcreteElement
 	%
 	% See also StringCombine, PanelPropString.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		S = 9; %CET: Computational Efficiency Trick
@@ -499,9 +499,9 @@ classdef StringUnit < ConcreteElement
 			prop = StringUnit.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case StringUnit.S % __StringUnit.S__
+				case 9 % StringUnit.S
 					prop_settings = Format.getFormatSettings(2);
-				case StringUnit.TEMPLATE % __StringUnit.TEMPLATE__
+				case 4 % StringUnit.TEMPLATE
 					prop_settings = 'StringUnit';
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -530,21 +530,21 @@ classdef StringUnit < ConcreteElement
 			prop = StringUnit.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case StringUnit.S % __StringUnit.S__
+				case 9 % StringUnit.S
 					prop_default = 'Hello';
-				case StringUnit.ELCLASS % __StringUnit.ELCLASS__
+				case 1 % StringUnit.ELCLASS
 					prop_default = 'StringUnit';
-				case StringUnit.NAME % __StringUnit.NAME__
+				case 2 % StringUnit.NAME
 					prop_default = 'String Unit';
-				case StringUnit.DESCRIPTION % __StringUnit.DESCRIPTION__
+				case 3 % StringUnit.DESCRIPTION
 					prop_default = 'A String Unit (StringUnit) contains a user-defined string. This element is created for distribution demonstration purpose.';
-				case StringUnit.TEMPLATE % __StringUnit.TEMPLATE__
+				case 4 % StringUnit.TEMPLATE
 					prop_default = Format.getFormatDefault(8, StringUnit.getPropSettings(prop));
-				case StringUnit.ID % __StringUnit.ID__
+				case 5 % StringUnit.ID
 					prop_default = 'StringUnit ID';
-				case StringUnit.LABEL % __StringUnit.LABEL__
+				case 6 % StringUnit.LABEL
 					prop_default = 'StringUnit label';
-				case StringUnit.NOTES % __StringUnit.NOTES__
+				case 7 % StringUnit.NOTES
 					prop_default = 'StringUnit notes';
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -610,12 +610,12 @@ classdef StringUnit < ConcreteElement
 			prop = StringUnit.getPropProp(pointer);
 			
 			switch prop
-				case StringUnit.S % __StringUnit.S__
+				case 9 % StringUnit.S
 					check = Format.checkFormat(2, value, StringUnit.getPropSettings(prop));
-				case StringUnit.TEMPLATE % __StringUnit.TEMPLATE__
+				case 4 % StringUnit.TEMPLATE
 					check = Format.checkFormat(8, value, StringUnit.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

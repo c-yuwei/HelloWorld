@@ -111,7 +111,7 @@ classdef GTA_NN < ConcreteElement
 	%
 	% See also PanelPropScalar.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		NN_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_NN < ConcreteElement
 			prop = GTA_NN.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_NN.NN_C % __GTA_NN.NN_C__
+				case 9 % GTA_NN.NN_C
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_M % __GTA_NN.NN_M__
+				case 10 % GTA_NN.NN_M
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_P % __GTA_NN.NN_P__
+				case 11 % GTA_NN.NN_P
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_D % __GTA_NN.NN_D__
+				case 12 % GTA_NN.NN_D
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_R % __GTA_NN.NN_R__
+				case 13 % GTA_NN.NN_R
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_Q % __GTA_NN.NN_Q__
+				case 14 % GTA_NN.NN_Q
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_E % __GTA_NN.NN_E__
+				case 15 % GTA_NN.NN_E
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_F % __GTA_NN.NN_F__
+				case 16 % GTA_NN.NN_F
 					prop_settings = Format.getFormatSettings(11);
-				case GTA_NN.NN_G % __GTA_NN.NN_G__
+				case 17 % GTA_NN.NN_G
 					prop_settings = Format.getFormatSettings(11);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_NN < ConcreteElement
 			prop = GTA_NN.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_NN.NN_C % __GTA_NN.NN_C__
+				case 9 % GTA_NN.NN_C
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_M % __GTA_NN.NN_M__
+				case 10 % GTA_NN.NN_M
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_P % __GTA_NN.NN_P__
+				case 11 % GTA_NN.NN_P
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_D % __GTA_NN.NN_D__
+				case 12 % GTA_NN.NN_D
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_R % __GTA_NN.NN_R__
+				case 13 % GTA_NN.NN_R
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_Q % __GTA_NN.NN_Q__
+				case 14 % GTA_NN.NN_Q
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_E % __GTA_NN.NN_E__
+				case 15 % GTA_NN.NN_E
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_F % __GTA_NN.NN_F__
+				case 16 % GTA_NN.NN_F
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_G % __GTA_NN.NN_G__
+				case 17 % GTA_NN.NN_G
 					prop_default = Format.getFormatDefault(11, GTA_NN.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_NN < ConcreteElement
 			prop = GTA_NN.getPropProp(pointer);
 			
 			switch prop
-				case GTA_NN.NN_C % __GTA_NN.NN_C__
+				case 9 % GTA_NN.NN_C
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_M % __GTA_NN.NN_M__
+				case 10 % GTA_NN.NN_M
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_P % __GTA_NN.NN_P__
+				case 11 % GTA_NN.NN_P
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_D % __GTA_NN.NN_D__
+				case 12 % GTA_NN.NN_D
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_R % __GTA_NN.NN_R__
+				case 13 % GTA_NN.NN_R
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_Q % __GTA_NN.NN_Q__
+				case 14 % GTA_NN.NN_Q
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_E % __GTA_NN.NN_E__
+				case 15 % GTA_NN.NN_E
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_F % __GTA_NN.NN_F__
+				case 16 % GTA_NN.NN_F
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
-				case GTA_NN.NN_G % __GTA_NN.NN_G__
+				case 17 % GTA_NN.NN_G
 					check = Format.checkFormat(11, value, GTA_NN.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

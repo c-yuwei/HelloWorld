@@ -111,7 +111,7 @@ classdef GTA_LL < ConcreteElement
 	%
 	% See also PanelPropCell.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		LL_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_LL < ConcreteElement
 			prop = GTA_LL.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_LL.LL_C % __GTA_LL.LL_C__
+				case 9 % GTA_LL.LL_C
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_M % __GTA_LL.LL_M__
+				case 10 % GTA_LL.LL_M
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_P % __GTA_LL.LL_P__
+				case 11 % GTA_LL.LL_P
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_D % __GTA_LL.LL_D__
+				case 12 % GTA_LL.LL_D
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_R % __GTA_LL.LL_R__
+				case 13 % GTA_LL.LL_R
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_Q % __GTA_LL.LL_Q__
+				case 14 % GTA_LL.LL_Q
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_E % __GTA_LL.LL_E__
+				case 15 % GTA_LL.LL_E
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_F % __GTA_LL.LL_F__
+				case 16 % GTA_LL.LL_F
 					prop_settings = Format.getFormatSettings(16);
-				case GTA_LL.LL_G % __GTA_LL.LL_G__
+				case 17 % GTA_LL.LL_G
 					prop_settings = Format.getFormatSettings(16);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_LL < ConcreteElement
 			prop = GTA_LL.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_LL.LL_C % __GTA_LL.LL_C__
+				case 9 % GTA_LL.LL_C
 					prop_default = {ones(3, 5)};
-				case GTA_LL.LL_M % __GTA_LL.LL_M__
+				case 10 % GTA_LL.LL_M
 					prop_default = {ones(2, 3) 2*ones(3, 2) 3*ones(4, 1)};
-				case GTA_LL.LL_P % __GTA_LL.LL_P__
+				case 11 % GTA_LL.LL_P
 					prop_default = {ones(2, 3); 2*ones(3, 2); 3*ones(4, 1)};
-				case GTA_LL.LL_D % __GTA_LL.LL_D__
+				case 12 % GTA_LL.LL_D
 					prop_default = {1.1*ones(1, 1) 1.2*ones(1, 2); 2.1*ones(2, 1) 2.2*ones(2, 2); 3.1*ones(3, 1) 3.2*ones(3, 2)};
-				case GTA_LL.LL_R % __GTA_LL.LL_R__
+				case 13 % GTA_LL.LL_R
 					prop_default = Format.getFormatDefault(16, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_Q % __GTA_LL.LL_Q__
+				case 14 % GTA_LL.LL_Q
 					prop_default = Format.getFormatDefault(16, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_E % __GTA_LL.LL_E__
+				case 15 % GTA_LL.LL_E
 					prop_default = Format.getFormatDefault(16, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_F % __GTA_LL.LL_F__
+				case 16 % GTA_LL.LL_F
 					prop_default = {1.1*ones(1, 1) 1.2*ones(1, 2); 2.1*ones(2, 1) 2.2*ones(2, 2)};
-				case GTA_LL.LL_G % __GTA_LL.LL_G__
+				case 17 % GTA_LL.LL_G
 					prop_default = Format.getFormatDefault(16, GTA_LL.getPropSettings(prop));
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_LL < ConcreteElement
 			prop = GTA_LL.getPropProp(pointer);
 			
 			switch prop
-				case GTA_LL.LL_C % __GTA_LL.LL_C__
+				case 9 % GTA_LL.LL_C
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_M % __GTA_LL.LL_M__
+				case 10 % GTA_LL.LL_M
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_P % __GTA_LL.LL_P__
+				case 11 % GTA_LL.LL_P
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_D % __GTA_LL.LL_D__
+				case 12 % GTA_LL.LL_D
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_R % __GTA_LL.LL_R__
+				case 13 % GTA_LL.LL_R
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_Q % __GTA_LL.LL_Q__
+				case 14 % GTA_LL.LL_Q
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_E % __GTA_LL.LL_E__
+				case 15 % GTA_LL.LL_E
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_F % __GTA_LL.LL_F__
+				case 16 % GTA_LL.LL_F
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
-				case GTA_LL.LL_G % __GTA_LL.LL_G__
+				case 17 % GTA_LL.LL_G
 					check = Format.checkFormat(16, value, GTA_LL.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end

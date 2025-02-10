@@ -111,7 +111,7 @@ classdef GTA_NM < ConcreteElement
 	%
 	% See also PanelPropMatrix.
 	%
-	% BUILD BRAPH2 6 class_name 1
+	% BUILD BRAPH2 7 class_name 1
 	
 	properties (Constant) % properties
 		NM_C = 9; %CET: Computational Efficiency Trick
@@ -570,23 +570,23 @@ classdef GTA_NM < ConcreteElement
 			prop = GTA_NM.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_NM.NM_C % __GTA_NM.NM_C__
+				case 9 % GTA_NM.NM_C
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_M % __GTA_NM.NM_M__
+				case 10 % GTA_NM.NM_M
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_P % __GTA_NM.NM_P__
+				case 11 % GTA_NM.NM_P
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_D % __GTA_NM.NM_D__
+				case 12 % GTA_NM.NM_D
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_R % __GTA_NM.NM_R__
+				case 13 % GTA_NM.NM_R
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_Q % __GTA_NM.NM_Q__
+				case 14 % GTA_NM.NM_Q
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_E % __GTA_NM.NM_E__
+				case 15 % GTA_NM.NM_E
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_F % __GTA_NM.NM_F__
+				case 16 % GTA_NM.NM_F
 					prop_settings = Format.getFormatSettings(14);
-				case GTA_NM.NM_G % __GTA_NM.NM_G__
+				case 17 % GTA_NM.NM_G
 					prop_settings = Format.getFormatSettings(14);
 				otherwise
 					prop_settings = getPropSettings@ConcreteElement(prop);
@@ -615,23 +615,23 @@ classdef GTA_NM < ConcreteElement
 			prop = GTA_NM.getPropProp(pointer);
 			
 			switch prop %CET: Computational Efficiency Trick
-				case GTA_NM.NM_C % __GTA_NM.NM_C__
+				case 9 % GTA_NM.NM_C
 					prop_default = eye(10);
-				case GTA_NM.NM_M % __GTA_NM.NM_M__
+				case 10 % GTA_NM.NM_M
 					prop_default = eye(10);
-				case GTA_NM.NM_P % __GTA_NM.NM_P__
+				case 11 % GTA_NM.NM_P
 					prop_default = eye(10);
-				case GTA_NM.NM_D % __GTA_NM.NM_D__
+				case 12 % GTA_NM.NM_D
 					prop_default = eye(10);
-				case GTA_NM.NM_R % __GTA_NM.NM_R__
+				case 13 % GTA_NM.NM_R
 					prop_default = Format.getFormatDefault(14, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_Q % __GTA_NM.NM_Q__
+				case 14 % GTA_NM.NM_Q
 					prop_default = Format.getFormatDefault(14, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_E % __GTA_NM.NM_E__
+				case 15 % GTA_NM.NM_E
 					prop_default = Format.getFormatDefault(14, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_F % __GTA_NM.NM_F__
+				case 16 % GTA_NM.NM_F
 					prop_default = eye(10);
-				case GTA_NM.NM_G % __GTA_NM.NM_G__
+				case 17 % GTA_NM.NM_G
 					prop_default = eye(10);
 				otherwise
 					prop_default = getPropDefault@ConcreteElement(prop);
@@ -697,26 +697,26 @@ classdef GTA_NM < ConcreteElement
 			prop = GTA_NM.getPropProp(pointer);
 			
 			switch prop
-				case GTA_NM.NM_C % __GTA_NM.NM_C__
+				case 9 % GTA_NM.NM_C
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_M % __GTA_NM.NM_M__
+				case 10 % GTA_NM.NM_M
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_P % __GTA_NM.NM_P__
+				case 11 % GTA_NM.NM_P
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_D % __GTA_NM.NM_D__
+				case 12 % GTA_NM.NM_D
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_R % __GTA_NM.NM_R__
+				case 13 % GTA_NM.NM_R
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_Q % __GTA_NM.NM_Q__
+				case 14 % GTA_NM.NM_Q
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_E % __GTA_NM.NM_E__
+				case 15 % GTA_NM.NM_E
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_F % __GTA_NM.NM_F__
+				case 16 % GTA_NM.NM_F
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
-				case GTA_NM.NM_G % __GTA_NM.NM_G__
+				case 17 % GTA_NM.NM_G
 					check = Format.checkFormat(14, value, GTA_NM.getPropSettings(prop));
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						check = checkProp@ConcreteElement(prop, value);
 					end
 			end
@@ -749,21 +749,21 @@ classdef GTA_NM < ConcreteElement
 			%  postset, postprocessing, checkValue.
 			
 			switch prop
-				case GTA_NM.NM_R % __GTA_NM.NM_R__
-					rng_settings_ = rng(); rng(gt.getPropSeed(GTA_NM.NM_R), 'twister')
+				case 13 % GTA_NM.NM_R
+					rng_settings_ = rng(); rng(gt.getPropSeed(13), 'twister')
 					
 					value = randi(10, 10);
 					
 					rng(rng_settings_)
 					
-				case GTA_NM.NM_Q % __GTA_NM.NM_Q__
+				case 14 % GTA_NM.NM_Q
 					value = randi(10, 10);
 					
-				case GTA_NM.NM_E % __GTA_NM.NM_E__
+				case 15 % GTA_NM.NM_E
 					value = randi(10, 10);
 					
 				otherwise
-					if prop <= ConcreteElement.getPropNumber()
+					if prop <= 8
 						value = calculateValue@ConcreteElement(gt, prop, varargin{:});
 					else
 						value = calculateValue@Element(gt, prop, varargin{:});
